@@ -10,7 +10,7 @@ import ProjectsPageIndicator from "../components/github_project/ProjectsPageIndi
 import profile from "../assets/projects/profile.webp";
 import { container, leftItem, rightItem } from "../constants/animationList";
 
-const Projects = ({ handleOnWheel }) => {
+const Projects = ({ handleOnWheel, handleOnVerticalSwipe }) => {
   const sectionCtx = useContext(SectionContext);
   const [activePage, setActivePage] = useState(0);
 
@@ -58,6 +58,9 @@ const Projects = ({ handleOnWheel }) => {
             id="2"
             className="w-full h-full pt-[60px] md:pt-0 md:flex md:items-center justify-center "
             onWheel={(event) => handleOnWheel(event, 2)}
+            drag="y"
+            dragElasti={0.1}
+            onDragEnd={(event, info) => handleOnVerticalSwipe(event, info, 2)}
           >
             <div className="w-full h-full md:w-[80%]  xl:max-w-[1400px]  flex flex-col  gap-14 md:gap-6  md:justify-center ">
               <div className="px-[26px] md:px-0  md:flex md:w-full md:justify-between md:items-start  md:gap-7">

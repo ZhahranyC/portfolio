@@ -11,7 +11,7 @@ import SubHeadingText from "../UI/SubHeadingText";
 import DescText from "../UI/DescText";
 import { container, leftItem, rightItem } from "../constants/animationList";
 
-const Skills = ({ handleOnWheel }) => {
+const Skills = ({ handleOnWheel, handleOnVerticalSwipe }) => {
   const [isOnFirstPage, setIsOnFirstPage] = useState(true);
   const sectionCtx = useContext(SectionContext);
 
@@ -27,6 +27,9 @@ const Skills = ({ handleOnWheel }) => {
             id="1"
             className="relative h-full w-full pt-[60px] md:flex md:flex-row-reverse md:items-center"
             onWheel={(event) => handleOnWheel(event, 1)}
+            drag="y"
+            dragElasti={0.1}
+            onDragEnd={(event, info) => handleOnVerticalSwipe(event, info, 1)}
           >
             <div className="md:w-[55%] w-full aspect-[3/2] md:aspect-auto">
               <motion.div

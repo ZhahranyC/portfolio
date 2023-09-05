@@ -47,19 +47,41 @@ const SectionsContainer = () => {
     }
   };
 
+  const handleOnVerticalSwipe = (event, info, sectionId) => {
+    const swipeThreshold = 10;
+
+    if (info.offset.y < -swipeThreshold && sectionId != 3) {
+      sectionCtx.updateSection(sectionId + 1);
+    } else if (info.offset.y > swipeThreshold && sectionId != 0) {
+      sectionCtx.updateSection(sectionId - 1);
+    }
+  };
+
   return (
     <div className="w-full h-full overflow-y-hidden">
       <section ref={firstSectionRef}>
-        <AboutMe handleOnWheel={handleOnWheel} />
+        <AboutMe
+          handleOnWheel={handleOnWheel}
+          handleOnVerticalSwipe={handleOnVerticalSwipe}
+        />
       </section>
       <section ref={secondSectionRef}>
-        <Skills handleOnWheel={handleOnWheel} />
+        <Skills
+          handleOnWheel={handleOnWheel}
+          handleOnVerticalSwipe={handleOnVerticalSwipe}
+        />
       </section>
       <section ref={thirdSectionRef}>
-        <Projects handleOnWheel={handleOnWheel} />
+        <Projects
+          handleOnWheel={handleOnWheel}
+          handleOnVerticalSwipe={handleOnVerticalSwipe}
+        />
       </section>
       <section ref={fourthSectionRef}>
-        <Contact handleOnWheel={handleOnWheel} />
+        <Contact
+          handleOnWheel={handleOnWheel}
+          handleOnVerticalSwipe={handleOnVerticalSwipe}
+        />
       </section>
     </div>
   );

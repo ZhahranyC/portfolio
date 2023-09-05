@@ -9,7 +9,7 @@ import SubHeadingText from "../UI/SubHeadingText";
 import DescText from "../UI/DescText";
 import { container, leftItem, rightItem } from "../constants/animationList";
 
-const AboutMe = ({ handleOnWheel }) => {
+const AboutMe = ({ handleOnWheel, handleOnVerticalSwipe }) => {
   const sectionCtx = useContext(SectionContext);
 
   return (
@@ -24,6 +24,10 @@ const AboutMe = ({ handleOnWheel }) => {
             animate="show"
             exit="left"
             onWheel={(event) => handleOnWheel(event, 0)}
+            drag="y"
+            dragConstraints={{ bottom: 0 }}
+            dragElasti={0.1}
+            onDragEnd={(event, info) => handleOnVerticalSwipe(event, info, 0)}
           >
             <motion.div
               className="w-full flex justify-center items-center md:w-[55%]"

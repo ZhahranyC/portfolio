@@ -54,7 +54,7 @@ const socialMediaList = [
   },
 ];
 
-const Contact = ({ handleOnWheel }) => {
+const Contact = ({ handleOnWheel, handleOnVerticalSwipe }) => {
   const sectionCtx = useContext(SectionContext);
 
   return (
@@ -69,6 +69,12 @@ const Contact = ({ handleOnWheel }) => {
             id="3"
             className="w-full h-full  pt-[60px]  flex justify-center md:pt-[10%]"
             onWheel={(event) => handleOnWheel(event, 3)}
+            drag="y"
+            dragConstraints={{
+              top: 0,
+            }}
+            dragElasti={0.1}
+            onDragEnd={(event, info) => handleOnVerticalSwipe(event, info, 3)}
           >
             <div className="md:w-[80%] xl:max-w-[1400px] flex flex-col gap-11 ">
               <div className="flex flex-col gap-2 md:w-[60%] md:gap-4">
