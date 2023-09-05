@@ -70,9 +70,7 @@ const Contact = ({ handleOnWheel, handleOnVerticalSwipe }) => {
             className="w-full h-full  pt-[60px]  flex justify-center md:pt-[10%]"
             onWheel={(event) => handleOnWheel(event, 3)}
             drag="y"
-            dragConstraints={{
-              top: 0,
-            }}
+            dragConstraints={{ bottom: 0, top: 0 }}
             dragElasti={0.1}
             onDragEnd={(event, info) => handleOnVerticalSwipe(event, info, 3)}
           >
