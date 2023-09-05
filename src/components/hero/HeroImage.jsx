@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import heroImage from "../../assets/hero/tara_head.webp";
+import heroImage from "../../assets/hero/ghina_header.webp";
 
 const HeroImage = () => {
   return (
