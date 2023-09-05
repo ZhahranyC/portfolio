@@ -18,11 +18,15 @@ const SkillsPerPage = ({ skills, index, isOnFirstPage, setIsOnFirstPage }) => {
       className={`${
         index == 1 ? " left-[100vw]" : ""
       } absolute w-full  grid grid-cols-3 gap-[8%] px-[12%]`}
-      drag="x"
-      dragElastic={0.1}
+      drag
+      dragElastic={0}
+      dragConstraints={{ bottom: 0, left: 0, right: 0, top: 0 }}
       onDragEnd={(event, info) => hanldeSwipe(event, info)}
       animate={{
         x: isOnFirstPage ? "0vw" : "-100vw",
+        transition: {
+          duration: 0.4,
+        },
       }}
     >
       {skills.map((skill, skillIndex) => (

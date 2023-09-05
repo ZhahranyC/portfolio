@@ -28,6 +28,7 @@ const Skills = ({ handleOnWheel, handleOnVerticalSwipe }) => {
             className="relative h-full w-full pt-[60px] md:flex md:flex-row-reverse md:items-center"
             onWheel={(event) => handleOnWheel(event, 1)}
             drag
+            dragConstraints={{ bottom: 0, left: 0, right: 0, top: 0 }}
             dragElastic={0}
             onDragEnd={(event, info) => handleOnVerticalSwipe(event, info, 1)}
           >

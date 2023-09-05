@@ -30,10 +30,14 @@ const ProjectsPerPage = ({
     <motion.div
       className={`${initialPageOverflow} absolute flex flex-col gap-[24px] w-full h-auto px-[26px] md:hidden`}
       drag="x"
-      dragElastic={0.1}
+      dragElastic={0}
+      dragConstraints={{ bottom: 0, left: 0, right: 0, top: 0 }}
       onDragEnd={(event, info) => hanldeSwipe(event, info)}
       animate={{
         x: swipeAnimation,
+        transition: {
+          duration: 0.4,
+        },
       }}
     >
       {repos.map((repo, index) => (
