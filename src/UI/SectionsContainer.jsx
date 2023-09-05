@@ -48,7 +48,7 @@ const SectionsContainer = () => {
   };
 
   const handleOnVerticalSwipe = (event, info, sectionId) => {
-    const swipeThreshold = 100;
+    const swipeThreshold = 10;
 
     if (info.offset.y < -swipeThreshold && sectionId != 3) {
       sectionCtx.updateSection(sectionId + 1);
