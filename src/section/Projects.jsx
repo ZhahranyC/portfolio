@@ -58,8 +58,7 @@ const Projects = ({ handleOnWheel, handleOnVerticalSwipe }) => {
             id="2"
             className="w-full h-full pt-[60px] md:pt-0 md:flex md:items-center justify-center "
             onWheel={(event) => handleOnWheel(event, 2)}
-            drag="y"
-            dragConstraints={{ bottom: 0, top: 0 }}
+            drag
             dragElastic={0}
             onDragEnd={(event, info) => handleOnVerticalSwipe(event, info, 2)}
           >

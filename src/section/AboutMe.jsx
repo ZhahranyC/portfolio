@@ -25,7 +25,7 @@ const AboutMe = ({ handleOnWheel, handleOnVerticalSwipe }) => {
             exit="left"
             onWheel={(event) => handleOnWheel(event, 0)}
             drag="y"
-            dragConstraints={{ bottom: 0, top: 0 }}
+            dragConstraints={{ bottom: 0 }}
             dragElastic={0}
             onDragEnd={(event, info) => handleOnVerticalSwipe(event, info, 0)}
           >
