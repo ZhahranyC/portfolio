@@ -26,7 +26,7 @@ const AboutMe = ({ handleOnWheel, handleOnVerticalSwipe }) => {
             onWheel={(event) => handleOnWheel(event, 0)}
             drag="y"
             dragConstraints={{ bottom: 0, top: 0 }}
-            dragElasti={0.1}
+            dragElastic={0}
             onDragEnd={(event, info) => handleOnVerticalSwipe(event, info, 0)}
           >
             <motion.div

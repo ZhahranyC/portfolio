@@ -29,7 +29,7 @@ const Skills = ({ handleOnWheel, handleOnVerticalSwipe }) => {
             onWheel={(event) => handleOnWheel(event, 1)}
             drag="y"
             dragConstraints={{ bottom: 0, top: 0 }}
-            dragElasti={0.1}
+            dragElastic={0}
             onDragEnd={(event, info) => handleOnVerticalSwipe(event, info, 1)}
           >
             <div className="md:w-[55%] w-full aspect-[3/2] md:aspect-auto">

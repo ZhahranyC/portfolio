@@ -71,7 +71,7 @@ const Contact = ({ handleOnWheel, handleOnVerticalSwipe }) => {
             onWheel={(event) => handleOnWheel(event, 3)}
             drag="y"
             dragConstraints={{ bottom: 0, top: 0 }}
-            dragElasti={0.1}
+            dragElastic={0}
             onDragEnd={(event, info) => handleOnVerticalSwipe(event, info, 3)}
           >
             <div className="md:w-[80%] xl:max-w-[1400px] flex flex-col gap-11 ">
