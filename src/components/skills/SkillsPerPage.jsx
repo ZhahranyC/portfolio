@@ -25,7 +25,7 @@ const SkillsPerPage = ({ skills, index, isOnFirstPage, setIsOnFirstPage }) => {
       animate={{
         x: isOnFirstPage ? "0vw" : "-100vw",
         transition: {
-          duration: 0.4,
+          duration: 0.2,
         },
       }}
     >

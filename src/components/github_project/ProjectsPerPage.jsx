@@ -36,7 +36,7 @@ const ProjectsPerPage = ({
       animate={{
         x: swipeAnimation,
         transition: {
-          duration: 0.4,
+          duration: 0.2,
         },
       }}
     >
